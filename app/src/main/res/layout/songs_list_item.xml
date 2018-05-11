@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/marginTop"
-    android:padding="15dp"
+    android:padding="@dimen/list_item_padding"
     android:background="@color/colorWhiteWithAlpha15">
     <TextView
         android:id="@+id/order_text_view"
@@ -14,7 +14,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/fa_solid"
-        android:textSize="16sp"
+        android:textSize="@dimen/list_item_textSize_small"
         android:textColor="@color/colorWhite"
         tools:text="10"/>
     <TextView
@@ -22,7 +22,7 @@
         android:layout_weight="4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="@dimen/list_item_textSize_normal"
         android:textColor="@color/colorWhite"
         tools:text="Stressed out"/>
     <TextView
@@ -30,7 +30,7 @@
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:textSize="@dimen/list_item_textSize_small"
         android:textColor="@color/colorWhite"
         android:textAlignment="viewEnd"
         android:layout_gravity="end"

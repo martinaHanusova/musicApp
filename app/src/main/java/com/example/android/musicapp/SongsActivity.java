@@ -7,12 +7,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-
-
-
 public class SongsActivity extends AppCompatActivity {
 
-    AlbumRepository albumRepository = new AlbumRepository();
+    AlbumRepository albumRepository = AlbumRepository.getInstance();
     String albumId;
     String nowPlayingSong;
 

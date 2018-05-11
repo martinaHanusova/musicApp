@@ -6,7 +6,16 @@ public class AlbumRepository {
 
     private ArrayList<Album> albums = new ArrayList<>();
 
-    public AlbumRepository() {
+    private static AlbumRepository instance;
+
+    public static AlbumRepository getInstance() {
+        if (instance == null) {
+            instance = new AlbumRepository();
+        }
+        return instance;
+    }
+
+    private AlbumRepository() {
 
         ArrayList<Song> firstAlbumSongs = new ArrayList<>();
         firstAlbumSongs.add(new Song(1, "Eraser", "3:47"));

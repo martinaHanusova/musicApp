@@ -3,8 +3,13 @@
     <dimen name="marginTop">10dp</dimen>
     <dimen name="paddingSmall">5dp</dimen>
     <dimen name="marginLeft">20dp</dimen>
+    <dimen name="smallMarginLeft">20dp</dimen>
     <dimen name="textSizeName">18sp</dimen>
     <dimen name="textSizeAlbum">20sp</dimen>
     <dimen name="textSizeIcon">26sp</dimen>
     <dimen name="iconMarginRight">10dp</dimen>
+    <dimen name="footerHeight">60dp</dimen>
+    <dimen name="list_item_padding">15dp</dimen>
+    <dimen name="list_item_textSize_small">16sp</dimen>
+    <dimen name="list_item_textSize_normal">20sp</dimen>
 </resources>

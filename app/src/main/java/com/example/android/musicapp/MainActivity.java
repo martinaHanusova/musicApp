@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    AlbumRepository albumRepository = new AlbumRepository();
+    private AlbumRepository albumRepository = AlbumRepository.getInstance();
     private static String nowPlayingSong = "";
 
     @Override
