@@ -23,7 +23,7 @@ public class SongAdapter extends ArrayAdapter<Song> {
         View listItemView = convertView;
         if(listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.list_item, parent, false);
+                    R.layout.songs_list_item, parent, false);
         }
 
         Song currentSong = getItem(position);

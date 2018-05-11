@@ -17,39 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FirstAlbumActivity"
-            android:label="@string/songs"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
-        </activity>
-        <activity
-            android:name=".SecondAlbumActivity"
-            android:label="@string/songs"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
-        </activity>
-        <activity
-            android:name=".ThirdAlbumActivity"
-            android:label="@string/songs"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
-        </activity>
-        <activity
-            android:name=".FourthAlbumActivity"
-            android:label="@string/songs"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
-        </activity>
-        <activity
-            android:name=".FifthAlbumActivity"
+            android:name=".SongsActivity"
             android:label="@string/songs"
             android:parentActivityName=".MainActivity">
             <meta-data

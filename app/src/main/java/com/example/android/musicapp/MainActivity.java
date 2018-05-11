@@ -4,58 +4,45 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    AlbumRepository albumRepository = new AlbumRepository();
+    private static String nowPlayingSong = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.songs_list);
 
-        LinearLayout firstAlbumLinearLayout = findViewById(R.id.firts_album);
-        firstAlbumLinearLayout.setOnClickListener(new View.OnClickListener() {
+        final AlbumAdapter albumAdapter = new AlbumAdapter(this, albumRepository.findAll());
+        ListView listView = findViewById(R.id.list);
+        listView.setAdapter(albumAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent firstAlbumIntent = new Intent(MainActivity.this, FirstAlbumActivity.class);
-                startActivity(firstAlbumIntent);
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(MainActivity.this, SongsActivity.class);
+                Bundle b = new Bundle();
+                b.putString("albumId", albumRepository.findAll().get(i).getId());
+                b.putString("nowPlayingSong", getNowPlayingSong());
+                intent.putExtras(b);
+                startActivity(intent);
             }
         });
 
-        LinearLayout secondAlbumLinearLayout = findViewById(R.id.second_album);
-        secondAlbumLinearLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent secondAlbumIntent = new Intent(MainActivity.this, SecondAlbumActivity.class);
-                startActivity(secondAlbumIntent);
-            }
-        });
+        TextView textViewNowPlaying = findViewById(R.id.view_now_playing);
+        textViewNowPlaying.setText(getNowPlayingSong());
+    }
 
-        LinearLayout thirdAlbumLinearLayout = findViewById(R.id.third_album);
-        thirdAlbumLinearLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent thirdAlbumIntent = new Intent(MainActivity.this, ThirdAlbumActivity.class);
-                startActivity(thirdAlbumIntent);
-            }
-        });
+    public static String getNowPlayingSong() {
+        return nowPlayingSong;
+    }
 
-        LinearLayout fourthAlbumLinearLayout = findViewById(R.id.fourth_album);
-        fourthAlbumLinearLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent fourthAlbumIntent = new Intent(MainActivity.this, FourthAlbumActivity.class);
-                startActivity(fourthAlbumIntent);
-            }
-        });
-
-        LinearLayout fifthAlbumLinearLayout = findViewById(R.id.fifth_album);
-        fifthAlbumLinearLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent fifthAlbumIntent = new Intent(MainActivity.this, FifthAlbumActivity.class);
-                startActivity(fifthAlbumIntent);
-            }
-        });
+    public static void setNowPlayingSong(String nowPlayingSong) {
+        MainActivity.nowPlayingSong = nowPlayingSong;
     }
 }

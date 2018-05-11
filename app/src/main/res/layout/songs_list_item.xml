@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/marginTop"
     android:padding="15dp"
-    android:background="@color/colorWhiteWithAlpha">
+    android:background="@color/colorWhiteWithAlpha15">
     <TextView
         android:id="@+id/order_text_view"
         android:layout_weight="1"
